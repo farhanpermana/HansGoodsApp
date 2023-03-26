@@ -13,11 +13,14 @@ class ItemsTableCell: UITableViewCell {
     
     var imgItem: UIImageView = {
         let img = UIImageView()
+        // add image
+        img.image = UIImage(named: "bag")
         return img
     }()
     
     var titleItem: UILabel = {
         let lb = UILabel()
+        lb.textColor = UIColor.black
         return lb
     }()
     
@@ -51,6 +54,12 @@ class ItemsTableCell: UITableViewCell {
         self.cardStyle.addSubview(titleItem)
         self.cardStyle.addSubview(priceItem)
         self.cardStyle.addSubview(categoryItem)
+        
+        setupCardStyle()
+        setupTitleItem()
+        setupImgItem()
+        setupPriceItem()
+        setupCatItem()
     }
     
     func setupImgItem() {
@@ -93,7 +102,7 @@ class ItemsTableCell: UITableViewCell {
             self.titleItem.heightAnchor.constraint(equalToConstant: 20),
             
         ])
-        self.titleItem.backgroundColor = UIColor.red
+//        self.titleItem.backgroundColor = UIColor.red
     }
     
     func setupPriceItem() {
@@ -106,10 +115,10 @@ class ItemsTableCell: UITableViewCell {
       
         ])
         self.priceItem.font = UIFont.boldSystemFont(ofSize: 12)
-        self.priceItem.backgroundColor = UIColor.red
+//        self.priceItem.backgroundColor = UIColor.red
     }
     
-    func catItem() {
+    func setupCatItem() {
         self.categoryItem.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -120,6 +129,12 @@ class ItemsTableCell: UITableViewCell {
         
         self.categoryItem.font = UIFont.systemFont(ofSize: 8)
         
+    }
+    
+    func config(model: ListItemsModel?) {
+        self.titleItem.text = model?.title
+        self.priceItem.text = "\(model?.price ?? 0)"
+        self.categoryItem.text = model?.category
     }
     
     override func awakeFromNib() {

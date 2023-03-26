@@ -16,7 +16,7 @@ protocol ApiServiceItemsProtocol {
 class ListItemsViewModel: ApiServiceItemsProtocol {
     
     private var apiService: ApiService?
-    var data: ListItemsModel?
+    var data: [ListItemsModel]?
     var urlString: String
     var bindListData: (([ListItemsModel]?) -> Void)?
     init(urlString: String, apiService: ApiServiceProtocol){
@@ -29,7 +29,7 @@ class ListItemsViewModel: ApiServiceItemsProtocol {
     }
     
     func fetchItem() {
-        self.apiService?.callAPI(model: [ListItemsModel].self, completion: { response in
+        self.apiService?.callAPI(model: [ListItemsModel]?.self, completion: { response in
             switch response {
             case .success(let success):
                 self.bindListData?(success)
@@ -39,5 +39,9 @@ class ListItemsViewModel: ApiServiceItemsProtocol {
                 self.bindListData?(nil)
             }
         })
+    }
+    
+    func numberOfRowsInSection() -> Int {
+        return self.data?.count ?? 0
     }
 }
