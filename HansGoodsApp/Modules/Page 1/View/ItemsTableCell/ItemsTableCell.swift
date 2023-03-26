@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ItemsTableCell: UITableViewCell {
     
@@ -132,6 +133,7 @@ class ItemsTableCell: UITableViewCell {
     }
     
     func config(model: ListItemsModel?) {
+        self.imgItem.sd_setImage(with: URL(string: model?.image ?? ""), placeholderImage: UIImage(named: "bag"))
         self.titleItem.text = model?.title
         self.priceItem.text = "\(model?.price ?? 0)"
         self.categoryItem.text = model?.category

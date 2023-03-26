@@ -15,12 +15,12 @@ class ListItemsController: UIViewController {
     
     private var listDatas: [ListItemsModel]?
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCell()
         setupItemsApi()
-    
+        
     }
     
     func registerCell() {
@@ -30,7 +30,7 @@ class ListItemsController: UIViewController {
         tableView.dataSource = self
         
     }
-
+    
 }
 
 extension ListItemsController: UITableViewDelegate, UITableViewDataSource {
@@ -53,10 +53,9 @@ extension ListItemsController: UITableViewDelegate, UITableViewDataSource {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
-
+            
         }
     }
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
@@ -71,10 +70,10 @@ extension ListItemsController: UITableViewDelegate, UITableViewDataSource {
               let cell = tableView.dequeueReusableCell(withIdentifier: ItemsTableCell.identifier, for: indexPath) as? ItemsTableCell else {
             return UITableViewCell()
         }
-
+        
         cell.setupConstraint()
         cell.config(model: items ?? ListItemsModel(id: 0, title: "null", price: 0, description: "null", category: "null", image: "null", rating: Ratings(rate: 0, count: 0)))
-
+        
         return cell
     }
     
