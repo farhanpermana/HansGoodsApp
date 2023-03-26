@@ -8,6 +8,10 @@
 import UIKit
 
 class DetailItemsController: UIViewController {
+    
+    static let identifier = "DetailItemsController"
+    
+    var listItems: [ListItemsModel]?
 
     override func viewDidLoad() {
         super.viewDidLoad()

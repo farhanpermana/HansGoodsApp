@@ -77,6 +77,16 @@ extension ListItemsController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let items = listDatas?[indexPath.row],
+           let vc = storyboard.instantiateViewController(identifier: DetailItemsController.identifier) as? DetailItemsController
+        {
+            vc.listItems = [items]
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
 }
 
 
