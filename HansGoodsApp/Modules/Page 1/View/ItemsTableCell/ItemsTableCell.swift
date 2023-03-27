@@ -83,7 +83,8 @@ class ItemsTableCell: UITableViewCell {
             self.cardStyle.topAnchor.constraint(equalTo: self.topAnchor, constant: 12),
             self.cardStyle.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 12),
             self.cardStyle.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -12),
-            self.cardStyle.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -12),
+            
+            self.cardStyle.heightAnchor.constraint(equalToConstant: 100)
             
         ])
         self.cardStyle.backgroundColor = UIColor.white
@@ -97,12 +98,16 @@ class ItemsTableCell: UITableViewCell {
         self.titleItem.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            self.titleItem.topAnchor.constraint(equalTo: self.topAnchor, constant: 12),
+            self.titleItem.topAnchor.constraint(equalTo: self.topAnchor, constant: 26),
             self.titleItem.leadingAnchor.constraint(equalTo: self.imgItem.trailingAnchor, constant: 12),
             self.titleItem.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -12),
-            self.titleItem.heightAnchor.constraint(equalToConstant: 20),
+            self.titleItem.heightAnchor.constraint(equalToConstant: 40),
             
         ])
+        // 2 lines and wrap
+        self.titleItem.lineBreakMode = .byWordWrapping
+        
+        self.titleItem.numberOfLines = 2
 //        self.titleItem.backgroundColor = UIColor.red
     }
     

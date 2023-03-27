@@ -77,21 +77,25 @@ extension DetailItemsController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let sections = sectionsDetail(rawValue: indexPath.section)
         switch sections {
+            
         case .image:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ImageTableCell.identifier, for: indexPath) as? ImageTableCell else { return UITableViewCell() }
             cell.imgLabel.sd_setImage(with: URL(string: itemDetail?.image ?? ""), placeholderImage: UIImage(named: "placeholder.png"))
             return cell
+            
         case .header:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: HeaderTableCell.identifier, for: indexPath) as? HeaderTableCell else { return UITableViewCell() }
             cell.titleLabel.text = itemDetail?.title
             cell.priceLabel.text = "$\(itemDetail?.price ?? 0)"
             return cell
+            
         case .desc:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: DescItemTableCell.identifier, for: indexPath) as? DescItemTableCell else { return UITableViewCell() }
             cell.ratingsValue.text = "\(itemDetail?.rating.rate ?? 0)"
-            cell.catValue.text = itemDetail?.category
+            cell.catValue.text = itemDetail?.category.capitalized
             cell.descValue.text = itemDetail?.description
             return cell
+            
         default:
             return UITableViewCell()
         }
@@ -105,7 +109,7 @@ extension DetailItemsController: UITableViewDelegate, UITableViewDataSource {
         case .header:
             return 100
         case .desc:
-            return 200
+            return 400
         default:
             return 0
         }

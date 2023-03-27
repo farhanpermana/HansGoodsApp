@@ -16,8 +16,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="109"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zt1-us-aQ1">
-                        <rect key="frame" x="16" y="18" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zt1-us-aQ1">
+                        <rect key="frame" x="16" y="18" width="238" height="20.333333333333329"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -41,6 +41,7 @@
                     <constraint firstAttribute="trailing" secondItem="bDr-lI-hZc" secondAttribute="trailing" constant="16" id="FG5-dF-D2O"/>
                     <constraint firstAttribute="trailing" secondItem="AhK-ab-5Vq" secondAttribute="trailing" constant="16" id="RZX-wY-VQP"/>
                     <constraint firstItem="bDr-lI-hZc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="18" id="SDs-fK-HZs"/>
+                    <constraint firstItem="bDr-lI-hZc" firstAttribute="leading" secondItem="Zt1-us-aQ1" secondAttribute="trailing" constant="8" symbolic="YES" id="Sjx-El-VDG"/>
                     <constraint firstItem="Zt1-us-aQ1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="18" id="nGt-NC-IcS"/>
                     <constraint firstItem="AhK-ab-5Vq" firstAttribute="top" secondItem="bDr-lI-hZc" secondAttribute="bottom" constant="18" id="quA-ST-PBv"/>
                 </constraints>

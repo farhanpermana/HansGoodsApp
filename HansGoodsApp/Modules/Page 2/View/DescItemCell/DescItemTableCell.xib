@@ -62,8 +62,8 @@
                             </label>
                         </subviews>
                     </stackView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHf-ul-udv">
-                        <rect key="frame" x="16" y="157.33333333333334" width="87.333333333333329" height="20.333333333333343"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHf-ul-udv">
+                        <rect key="frame" x="16" y="157.33333333333334" width="272" height="20.333333333333343"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -71,6 +71,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="MQd-2r-DJx" firstAttribute="leading" secondItem="3ao-gh-Zew" secondAttribute="trailing" constant="25" id="9mA-X1-511"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="IHf-ul-udv" secondAttribute="trailing" constant="16" id="AiX-if-wFH"/>
                     <constraint firstItem="Sd2-ao-tDW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="JPS-2E-RzW"/>
                     <constraint firstItem="MQd-2r-DJx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="52" id="Q49-AZ-NUL"/>
                     <constraint firstItem="3ao-gh-Zew" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="QQv-R4-QjY"/>

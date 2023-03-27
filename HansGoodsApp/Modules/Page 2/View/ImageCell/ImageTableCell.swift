@@ -13,9 +13,16 @@ class ImageTableCell: UITableViewCell {
 
     @IBOutlet weak var imgLabel: UIImageView!
     
+    @IBOutlet weak var opacityView: UIView!
+    
+    
+    func setupCell() {
+        opacityView.layer.backgroundColor = UIColor.black.withAlphaComponent(0.5).cgColor
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        setupCell()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

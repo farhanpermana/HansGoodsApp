@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -22,21 +23,45 @@
                             <constraint firstAttribute="height" constant="150" id="RSS-4e-gaj"/>
                         </constraints>
                     </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aae-cJ-iEq">
+                        <rect key="frame" x="0.0" y="136" width="320" height="30"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bagian depan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sA-HU-1N6">
+                                <rect key="frame" x="16" y="1" width="104" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1sA-HU-1N6" firstAttribute="top" secondItem="Aae-cJ-iEq" secondAttribute="top" constant="1" id="3eP-7A-tce"/>
+                            <constraint firstItem="1sA-HU-1N6" firstAttribute="leading" secondItem="Aae-cJ-iEq" secondAttribute="leading" constant="16" id="R8x-Lh-A73"/>
+                            <constraint firstAttribute="height" constant="30" id="nTX-gw-NaV"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="bge-QP-eTw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="7Ox-dM-ig9"/>
+                    <constraint firstAttribute="trailing" secondItem="Aae-cJ-iEq" secondAttribute="trailing" id="7Tk-ky-mBL"/>
                     <constraint firstAttribute="trailing" secondItem="bge-QP-eTw" secondAttribute="trailing" constant="8" id="8qg-uo-aqc"/>
                     <constraint firstItem="bge-QP-eTw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="90h-SV-tWK"/>
+                    <constraint firstItem="Aae-cJ-iEq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="d6e-Sa-OuT"/>
+                    <constraint firstAttribute="bottom" secondItem="Aae-cJ-iEq" secondAttribute="bottom" id="l0i-B1-oI2"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="imgLabel" destination="bge-QP-eTw" id="4Qf-FJ-EwX"/>
+                <outlet property="opacityView" destination="Aae-cJ-iEq" id="l7C-LL-uIm"/>
             </connections>
             <point key="canvasLocation" x="56.488549618320612" y="63.380281690140848"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="bag" width="2500" height="2500"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

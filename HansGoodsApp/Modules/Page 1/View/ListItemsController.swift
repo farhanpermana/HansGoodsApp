@@ -25,6 +25,8 @@ class ListItemsController: UIViewController {
     func registerCell() {
         tableView.register(ItemsTableCell.self, forCellReuseIdentifier: ItemsTableCell.identifier)
         
+        tableView.separatorStyle = .none
+        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -56,11 +58,11 @@ extension ListItemsController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return listDatas?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        100
+        120
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -70,7 +72,7 @@ extension ListItemsController: UITableViewDelegate, UITableViewDataSource {
         }
         
         cell.setupConstraint()
-        cell.config(model: items ?? ListItemsModel(id: 0, title: "null", price: 0, description: "null", category: "null", image: "null", rating: Ratings(rate: 0, count: 0)))
+        cell.config(model: items )
         
         return cell
     }
@@ -80,6 +82,8 @@ extension ListItemsController: UITableViewDelegate, UITableViewDataSource {
         if let items = listDatas?[indexPath.row],
            let vc = storyboard.instantiateViewController(identifier: DetailItemsController.identifier) as? DetailItemsController
         {
+            // move to detail page with id
+            
             vc.listItems = [items]
             self.navigationController?.pushViewController(vc, animated: true)
         }
