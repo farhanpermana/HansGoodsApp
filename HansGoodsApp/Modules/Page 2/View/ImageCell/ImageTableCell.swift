@@ -11,6 +11,8 @@ class ImageTableCell: UITableViewCell {
     
     static let identifier = "ImageTableCell"
 
+    @IBOutlet weak var imgLabel: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

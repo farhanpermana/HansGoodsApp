@@ -15,7 +15,6 @@ class ListItemsController: UIViewController {
     
     private var listDatas: [ListItemsModel]?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCell()
@@ -35,10 +34,9 @@ class ListItemsController: UIViewController {
 
 extension ListItemsController: UITableViewDelegate, UITableViewDataSource {
     
-    func setupItemsApi() {
-        let url = "https://fakestoreapi.com/products/"
+    func setupItemsApi(apiUrl: String = "https://fakestoreapi.com/products/") {
         
-        self.listItemViewModel = ListItemsViewModel(urlString: url, apiService: ApiService())
+        self.listItemViewModel = ListItemsViewModel(urlString: apiUrl, apiService: ApiService())
         self.listItemViewModel?.bindListData = {
             listModel in
             if let listData = listModel {
